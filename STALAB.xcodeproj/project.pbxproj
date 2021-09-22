@@ -37,6 +37,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F196910526FB87E10000B71D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F196910726FB88630000B71D /* Modules */,
+				F196910626FB885B0000B71D /* Commons */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		F196910626FB885B0000B71D /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		F196910726FB88630000B71D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F196910826FB886E0000B71D /* Signup */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F196910826FB886E0000B71D /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
 		F1EFBE1B26FB6EE000B9E196 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +87,7 @@
 		F1EFBE2626FB6EE000B9E196 /* STALAB */ = {
 			isa = PBXGroup;
 			children = (
+				F196910526FB87E10000B71D /* Classes */,
 				F1EFBE2726FB6EE000B9E196 /* AppDelegate.swift */,
 				F1EFBE2926FB6EE000B9E196 /* SceneDelegate.swift */,
 				F1EFBE2B26FB6EE000B9E196 /* ViewController.swift */,
