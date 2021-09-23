@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6F93ED42F38E58AE543DCFD /* Pods_STALAB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891068C27647C430AA783C18 /* Pods_STALAB.framework */; };
+		F16C14C626FC3BFF00CE5E8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F16C14C526FC3BFF00CE5E8C /* GoogleService-Info.plist */; };
 		F1EFBE2826FB6EE000B9E196 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EFBE2726FB6EE000B9E196 /* AppDelegate.swift */; };
 		F1EFBE2A26FB6EE000B9E196 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EFBE2926FB6EE000B9E196 /* SceneDelegate.swift */; };
 		F1EFBE2C26FB6EE000B9E196 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EFBE2B26FB6EE000B9E196 /* ViewController.swift */; };
@@ -16,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D5F288FE7DF9553AE878509 /* Pods-STALAB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STALAB.release.xcconfig"; path = "Target Support Files/Pods-STALAB/Pods-STALAB.release.xcconfig"; sourceTree = "<group>"; };
+		891068C27647C430AA783C18 /* Pods_STALAB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STALAB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F16C14C526FC3BFF00CE5E8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F1EFBE2426FB6EE000B9E196 /* STALAB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STALAB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EFBE2726FB6EE000B9E196 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1EFBE2926FB6EE000B9E196 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +29,7 @@
 		F1EFBE3026FB6EE200B9E196 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1EFBE3326FB6EE200B9E196 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1EFBE3526FB6EE200B9E196 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB1055C4DFD9D48A66020702 /* Pods-STALAB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STALAB.debug.xcconfig"; path = "Target Support Files/Pods-STALAB/Pods-STALAB.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +37,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6F93ED42F38E58AE543DCFD /* Pods_STALAB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F77052362D72BB61654D031 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB1055C4DFD9D48A66020702 /* Pods-STALAB.debug.xcconfig */,
+				0D5F288FE7DF9553AE878509 /* Pods-STALAB.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		71B935BC4A3D0188BF7AD7A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				891068C27647C430AA783C18 /* Pods_STALAB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F196910526FB87E10000B71D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -73,6 +98,8 @@
 			children = (
 				F1EFBE2626FB6EE000B9E196 /* STALAB */,
 				F1EFBE2526FB6EE000B9E196 /* Products */,
+				2F77052362D72BB61654D031 /* Pods */,
+				71B935BC4A3D0188BF7AD7A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +122,7 @@
 				F1EFBE3026FB6EE200B9E196 /* Assets.xcassets */,
 				F1EFBE3226FB6EE200B9E196 /* LaunchScreen.storyboard */,
 				F1EFBE3526FB6EE200B9E196 /* Info.plist */,
+				F16C14C526FC3BFF00CE5E8C /* GoogleService-Info.plist */,
 			);
 			path = STALAB;
 			sourceTree = "<group>";
@@ -106,9 +134,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1EFBE3826FB6EE200B9E196 /* Build configuration list for PBXNativeTarget "STALAB" */;
 			buildPhases = (
+				B3E0CC47477571CA2E618939 /* [CP] Check Pods Manifest.lock */,
 				F1EFBE2026FB6EE000B9E196 /* Sources */,
 				F1EFBE2126FB6EE000B9E196 /* Frameworks */,
 				F1EFBE2226FB6EE000B9E196 /* Resources */,
+				6D1E1D8A3EE23AAA141D46F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,12 +187,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1EFBE3426FB6EE200B9E196 /* LaunchScreen.storyboard in Resources */,
+				F16C14C626FC3BFF00CE5E8C /* GoogleService-Info.plist in Resources */,
 				F1EFBE3126FB6EE200B9E196 /* Assets.xcassets in Resources */,
 				F1EFBE2F26FB6EE000B9E196 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6D1E1D8A3EE23AAA141D46F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-STALAB/Pods-STALAB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-STALAB/Pods-STALAB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-STALAB/Pods-STALAB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3E0CC47477571CA2E618939 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-STALAB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F1EFBE2026FB6EE000B9E196 /* Sources */ = {
@@ -315,6 +388,7 @@
 		};
 		F1EFBE3926FB6EE200B9E196 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB1055C4DFD9D48A66020702 /* Pods-STALAB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -333,6 +407,7 @@
 		};
 		F1EFBE3A26FB6EE200B9E196 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D5F288FE7DF9553AE878509 /* Pods-STALAB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
