@@ -3,12 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		B6F93ED42F38E58AE543DCFD /* Pods_STALAB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891068C27647C430AA783C18 /* Pods_STALAB.framework */; };
+		F10F2FB726FC63B300647C82 /* UIStoryboard+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F2FB626FC63B300647C82 /* UIStoryboard+.swift */; };
+		F10F2FB926FC647C00647C82 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10F2FB826FC647C00647C82 /* Router.swift */; };
 		F16C14C626FC3BFF00CE5E8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F16C14C526FC3BFF00CE5E8C /* GoogleService-Info.plist */; };
+		F16C14C826FC488500CE5E8C /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C14C726FC488500CE5E8C /* SignupViewController.swift */; };
+		F16C14CB26FC490300CE5E8C /* Signup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F16C14CA26FC490300CE5E8C /* Signup.storyboard */; };
 		F1EFBE2826FB6EE000B9E196 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EFBE2726FB6EE000B9E196 /* AppDelegate.swift */; };
 		F1EFBE2A26FB6EE000B9E196 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EFBE2926FB6EE000B9E196 /* SceneDelegate.swift */; };
 		F1EFBE2C26FB6EE000B9E196 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EFBE2B26FB6EE000B9E196 /* ViewController.swift */; };
@@ -20,7 +24,11 @@
 /* Begin PBXFileReference section */
 		0D5F288FE7DF9553AE878509 /* Pods-STALAB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STALAB.release.xcconfig"; path = "Target Support Files/Pods-STALAB/Pods-STALAB.release.xcconfig"; sourceTree = "<group>"; };
 		891068C27647C430AA783C18 /* Pods_STALAB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_STALAB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F10F2FB626FC63B300647C82 /* UIStoryboard+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+.swift"; sourceTree = "<group>"; };
+		F10F2FB826FC647C00647C82 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F16C14C526FC3BFF00CE5E8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F16C14C726FC488500CE5E8C /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		F16C14CA26FC490300CE5E8C /* Signup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Signup.storyboard; sourceTree = "<group>"; };
 		F1EFBE2426FB6EE000B9E196 /* STALAB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STALAB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1EFBE2726FB6EE000B9E196 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1EFBE2926FB6EE000B9E196 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +58,6 @@
 				FB1055C4DFD9D48A66020702 /* Pods-STALAB.debug.xcconfig */,
 				0D5F288FE7DF9553AE878509 /* Pods-STALAB.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -60,6 +67,31 @@
 				891068C27647C430AA783C18 /* Pods_STALAB.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F16C14C926FC48E300CE5E8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F16C14C726FC488500CE5E8C /* SignupViewController.swift */,
+				F16C14CA26FC490300CE5E8C /* Signup.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F16C14CC26FC493300CE5E8C /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F10F2FB826FC647C00647C82 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F16C14CD26FC493900CE5E8C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F10F2FB626FC63B300647C82 /* UIStoryboard+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F196910526FB87E10000B71D /* Classes */ = {
@@ -74,6 +106,8 @@
 		F196910626FB885B0000B71D /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				F16C14CD26FC493900CE5E8C /* Extensions */,
+				F16C14CC26FC493300CE5E8C /* Router */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -89,6 +123,7 @@
 		F196910826FB886E0000B71D /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				F16C14C926FC48E300CE5E8C /* View */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -189,6 +224,7 @@
 				F1EFBE3426FB6EE200B9E196 /* LaunchScreen.storyboard in Resources */,
 				F16C14C626FC3BFF00CE5E8C /* GoogleService-Info.plist in Resources */,
 				F1EFBE3126FB6EE200B9E196 /* Assets.xcassets in Resources */,
+				F16C14CB26FC490300CE5E8C /* Signup.storyboard in Resources */,
 				F1EFBE2F26FB6EE000B9E196 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,8 +278,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F10F2FB726FC63B300647C82 /* UIStoryboard+.swift in Sources */,
 				F1EFBE2C26FB6EE000B9E196 /* ViewController.swift in Sources */,
 				F1EFBE2826FB6EE000B9E196 /* AppDelegate.swift in Sources */,
+				F16C14C826FC488500CE5E8C /* SignupViewController.swift in Sources */,
+				F10F2FB926FC647C00647C82 /* Router.swift in Sources */,
 				F1EFBE2A26FB6EE000B9E196 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
