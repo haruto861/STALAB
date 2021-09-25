@@ -126,6 +126,7 @@
 		F196910826FB886E0000B71D /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				F1EBE8B326FF0466009C5A4F /* Model */,
 				F16C14C926FC48E300CE5E8C /* View */,
 			);
 			path = Signup;
@@ -138,6 +139,13 @@
 				F1EBE8B126FEFCE4009C5A4F /* TopPageViewController.swift */,
 			);
 			path = TopPage;
+			sourceTree = "<group>";
+		};
+		F1EBE8B326FF0466009C5A4F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F1EFBE1B26FB6EE000B9E196 = {
