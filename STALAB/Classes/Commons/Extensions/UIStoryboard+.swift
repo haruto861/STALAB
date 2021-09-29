@@ -16,4 +16,8 @@ extension UIStoryboard {
     static var topPageViewController: TopPageViewController {
         return UIStoryboard(name: "TopPage", bundle: nil).instantiateInitialViewController() as! TopPageViewController
     }
+
+    static var signupMethodViewController: SignupMethodViewController {
+        return UIStoryboard(name: "SignupMethod", bundle: nil).instantiateInitialViewController() as! SignupMethodViewController
+    }
 }

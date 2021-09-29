@@ -27,6 +27,11 @@ final class Router {
         transit(from: from, next: vc)
     }
 
+    func toSignupMethod(from: UIViewController) {
+        let vc  = UIStoryboard.signupMethodViewController
+        transit(from: from, next: vc)
+    }
+
     func transit(from: UIViewController, next: UIViewController, animated: Bool = true) {
         if let nav = from.navigationController {
             nav.pushViewController(next, animated: true)

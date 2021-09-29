@@ -14,11 +14,8 @@ final class TopPageViewController: UIViewController {
             signupButton.addTarget(self, action: #selector(didTapSingup), for: .touchUpInside)
         }
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
 
     @objc private func didTapSingup() {
-        Router.shared.toSignup(from: self)
+        Router.shared.toSignupMethod(from: self)
     }
 }
