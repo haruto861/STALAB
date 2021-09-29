@@ -22,10 +22,6 @@ final class SignupViewController: UIViewController {
     }
 
     @objc private func didTapSignup() {
-        // 会員登録できないパターン
-        // 既にログインがある場合
-        // パスワードが不一致な場合
-        // メールアドレスの形式が正しくない場合
         guard
             let userName = userNameTextField.text ,
             let email = emailTextFiled.text,
@@ -41,14 +37,22 @@ final class SignupViewController: UIViewController {
     }
 
     private func creatUser(email: String, password: String, userName: String) {
-
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            if let error = error {
-                print("認証情報の保存に失敗しました",error.localizedDescription)
-                return
-            } else {
-            }
-            print("認証情報の保存に成功しました")
+            if let errCode = AuthErrorCode(rawValue: error!._code) {
+                    switch errCode {
+                    case .invalidEmail:
+                        print("メールアドレスの形式が違います")
+                    case .emailAlreadyInUse:
+                        print("このメールアドレスは既に使用されています")
+                    case .weakPassword:
+                        print("パスワードは６文字以上で入力してください")
+                    default:
+                        print("")
+                    }
+                } else {
+                    print("welcome")
+                }
+
             guard let uid = Auth.auth().currentUser?.uid else { return }
             Firestore.firestore().collection("users").document(uid).setData(["createdAt": Timestamp(),
                                                                              "userName": userName,
