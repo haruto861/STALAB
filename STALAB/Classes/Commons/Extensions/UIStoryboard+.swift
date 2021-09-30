@@ -20,4 +20,8 @@ extension UIStoryboard {
     static var signupMethodViewController: SignupMethodViewController {
         return UIStoryboard(name: "SignupMethod", bundle: nil).instantiateInitialViewController() as! SignupMethodViewController
     }
+
+    static var homeViewController: HomeViewController {
+        return UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as! HomeViewController
+    }
 }

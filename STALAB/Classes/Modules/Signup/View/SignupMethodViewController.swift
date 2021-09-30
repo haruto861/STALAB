@@ -59,7 +59,7 @@ final class SignupMethodViewController: UIViewController {
                 print("エラー",error)
                 return
             } else {
-                print("サインイン完了",data?.user.displayName)
+                Router.shared.toHome(from: self)
             }
         }
     }

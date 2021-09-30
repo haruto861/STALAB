@@ -32,6 +32,14 @@ final class Router {
         transit(from: from, next: vc)
     }
 
+    func toHome(from: UIViewController) {
+        let tab = UITabBarController()
+        let vc = [UIStoryboard.homeViewController]
+        tab.setViewControllers(vc, animated: true)
+        window?.rootViewController = tab
+        window?.makeKeyAndVisible()
+    }
+
     func transit(from: UIViewController, next: UIViewController, animated: Bool = true) {
         if let nav = from.navigationController {
             nav.pushViewController(next, animated: true)
