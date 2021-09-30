@@ -16,7 +16,11 @@ final class SignupMethodViewController: UIViewController {
             emailButton.addTarget(self, action: #selector(emailPressed(_:)), for: .touchUpInside)
         }
     }
-    @IBOutlet private weak var googleButton: UIButton!
+    @IBOutlet private weak var googleButton: UIButton! {
+        didSet {
+            googleButton.addTarget(self, action: #selector(googlePressed(_:)), for: .touchUpInside)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +30,7 @@ final class SignupMethodViewController: UIViewController {
         Router.shared.toSignup(from: self)
     }
 
-    private func performGoogleAccountLink() {
+    @objc private func googlePressed(_ sender: UIButton) {
         guard let clientId = FirebaseApp.app()?.options.clientID else {
             return
         }
@@ -44,11 +48,20 @@ final class SignupMethodViewController: UIViewController {
                     return
                 }
                 let credential = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: authetication.accessToken)
-                // linkAccount-methodを呼ぶ
+                linkAccount(authenticatonCredential: credential)
             }
         }
     }
 
     private func linkAccount(authenticatonCredential: AuthCredential) {
+        Auth.auth().signIn(with: authenticatonCredential) { data, error in
+            if let error  = error {
+                print("エラー",error)
+                return
+            } else {
+                print("サインイン完了",data?.user.displayName)
+            }
+        }
     }
+
 }

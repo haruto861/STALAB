@@ -32,7 +32,7 @@
                     </view>
                     <connections>
                         <outlet property="emailButton" destination="dgv-yx-LYe" id="Hir-nk-Ems"/>
-                        <outlet property="googleButton" destination="Vdh-B5-Lrn" id="Erp-nr-T6d"/>
+                        <outlet property="googleButton" destination="Vdh-B5-Lrn" id="Qy3-Hc-qpO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
