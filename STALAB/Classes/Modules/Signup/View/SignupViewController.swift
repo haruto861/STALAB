@@ -50,7 +50,7 @@ final class SignupViewController: UIViewController {
         if password != confirm {
             return
         }
-         creatUser(email: email, password: password, userName: userName)
+        creatUser(email: email, password: password, userName: userName)
     }
 
     private func creatUser(email: String, password: String, userName: String) {
@@ -58,13 +58,15 @@ final class SignupViewController: UIViewController {
             if let error = error {
                 switch AuthErrorCode(rawValue: error._code) {
                 case .invalidEmail:
-                    print("メールアドレスの形式が違います")
+                    UIAlertController(title: "エラー", message: "メールアドレスの形式が違います", preferredStyle: .alert).addOK(handler: nil).show(from: self)
                 case .emailAlreadyInUse:
-                    print("このメールアドレスは既に使用されています")
+                    UIAlertController(title: "エラー", message: "このメールアドレスは既に使用されています", preferredStyle: .alert).addCancel(handler: nil).addAction(title: "ログインへ") { _ in
+                        Router.shared.toHome(from: self)
+                    }.show(from: self)
                 case .weakPassword:
-                    print("パスワードは６文字以上で入力してください")
+                    UIAlertController(title: "エラー", message: "パスワードは6文字以上で入植してください", preferredStyle: .alert).addOK(handler: nil).show(from: self)
                 default:
-                    print("")
+                    break
                 }
             } else {
                 Router.shared.toHome(from: self)
