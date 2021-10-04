@@ -17,7 +17,7 @@ extension UIAlertController {
  }
 
     func addCancel(handler: ( (UIAlertAction) -> Void)?) -> Self {
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: handler)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .default, handler: handler)
         self.addAction(cancelAction)
         return self
     }
