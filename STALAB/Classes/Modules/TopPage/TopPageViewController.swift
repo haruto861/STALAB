@@ -16,6 +16,6 @@ final class TopPageViewController: UIViewController {
     }
 
     @objc private func didTapSingup() {
-        Router.shared.toSignupMethod(from: self)
+        Router.shared.toSignup(from: self)
     }
 }

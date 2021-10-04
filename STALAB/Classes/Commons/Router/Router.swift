@@ -27,11 +27,6 @@ final class Router {
         transit(from: from, next: vc)
     }
 
-    func toSignupMethod(from: UIViewController) {
-        let vc  = UIStoryboard.signupMethodViewController
-        transit(from: from, next: vc)
-    }
-
     func toHome(from: UIViewController) {
         let tab = UITabBarController()
         let vc = [UIStoryboard.homeViewController]

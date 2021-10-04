@@ -8,12 +8,29 @@
 import UIKit
 import Firebase
 
+
 final class SignupViewController: UIViewController {
 
-    @IBOutlet private weak var userNameTextField: UITextField!
-    @IBOutlet private weak var emailTextFiled: UITextField!
-    @IBOutlet private weak var passwordTextField: UITextField!
-    @IBOutlet private weak var confirmPasswordTextfField: UITextField!
+    @IBOutlet private weak var userNameTextField: UITextField! {
+        didSet {
+            userNameTextField.delegate = self
+        }
+    }
+    @IBOutlet private weak var emailTextFiled: UITextField! {
+        didSet {
+            emailTextFiled.delegate = self
+        }
+    }
+    @IBOutlet private weak var passwordTextField: UITextField! {
+        didSet {
+            passwordTextField.delegate = self
+        }
+    }
+    @IBOutlet private weak var confirmPasswordTextfField: UITextField! {
+        didSet {
+            confirmPasswordTextfField.delegate = self
+        }
+    }
 
     @IBOutlet private weak var signupButton: UIButton! {
         didSet {
@@ -38,21 +55,20 @@ final class SignupViewController: UIViewController {
 
     private func creatUser(email: String, password: String, userName: String) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            if let errCode = AuthErrorCode(rawValue: error!._code) {
-                    switch errCode {
-                    case .invalidEmail:
-                        print("メールアドレスの形式が違います")
-                    case .emailAlreadyInUse:
-                        print("このメールアドレスは既に使用されています")
-                    case .weakPassword:
-                        print("パスワードは６文字以上で入力してください")
-                    default:
-                        print("")
-                    }
-                } else {
-                    print("welcome")
+            if let error = error {
+                switch AuthErrorCode(rawValue: error._code) {
+                case .invalidEmail:
+                    print("メールアドレスの形式が違います")
+                case .emailAlreadyInUse:
+                    print("このメールアドレスは既に使用されています")
+                case .weakPassword:
+                    print("パスワードは６文字以上で入力してください")
+                default:
+                    print("")
                 }
-
+            } else {
+                Router.shared.toHome(from: self)
+            }
             guard let uid = Auth.auth().currentUser?.uid else { return }
             Firestore.firestore().collection("users").document(uid).setData(["createdAt": Timestamp(),
                                                                              "userName": userName,
@@ -64,5 +80,12 @@ final class SignupViewController: UIViewController {
                 }
             }
         }
+    }
+}
+
+extension SignupViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
