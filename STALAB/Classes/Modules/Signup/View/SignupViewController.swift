@@ -64,7 +64,7 @@ final class SignupViewController: UIViewController {
                         Router.shared.toHome(from: self)
                     }.show(from: self)
                 case .weakPassword:
-                    UIAlertController(title: "エラー", message: "パスワードは6文字以上で入植してください", preferredStyle: .alert).addOK(handler: nil).show(from: self)
+                    UIAlertController(title: "エラー", message: "パスワードは6文字以上で入力してください", preferredStyle: .alert).addOK(handler: nil).show(from: self)
                 default:
                     break
                 }
