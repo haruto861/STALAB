@@ -69,16 +69,24 @@ final class SignupViewController: UIViewController {
                     break
                 }
             } else {
-                Router.shared.toHome(from: self)
+                result?.user.sendEmailVerification(completion: { error in
+                    if let error = error {
+                        print("送信できませんでした",error.localizedDescription)
+                    }
+                    UIAlertController(title: "仮登録を行いました", message: "入力したメールアドレス宛に確認メールを送信しました。", preferredStyle: .alert).addOK(handler: nil).show(from: self)
+                })
             }
-            guard let uid = Auth.auth().currentUser?.uid else { return }
-            Firestore.firestore().collection("users").document(uid).setData(["createdAt": Timestamp(),
-                                                                             "userName": userName,
-                                                                             "email": email
-            ]) { error in
-                if let error = error {
-                    print("Firestoreへの保存に失敗しました",error.localizedDescription)
-                    return
+        }
+    }
+
+    private func  isUserVerified() {
+        if let user = Auth.auth().currentUser {
+            user.reload { error in
+                guard error != nil else { return }
+                if user.isEmailVerified == true {
+
+                } else {
+
                 }
             }
         }
@@ -91,3 +99,4 @@ extension SignupViewController: UITextFieldDelegate {
         return true
     }
 }
+
