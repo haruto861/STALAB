@@ -52,7 +52,10 @@ final class SignupViewController: UIViewController {
         }
         creatUser(email: email, password: password, userName: userName)
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        isUserVerified()
+    }
     private func creatUser(email: String, password: String, userName: String) {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if let error = error {
@@ -84,9 +87,9 @@ final class SignupViewController: UIViewController {
             user.reload { error in
                 guard error != nil else { return }
                 if user.isEmailVerified == true {
-
+                    Router.shared.toHome(from: self)
                 } else {
-
+                    UIAlertController(title: "メール認証が完了しておりません", message: "確認メールをご確認下さい", preferredStyle: .alert).addOK(handler: nil).show(from: self)
                 }
             }
         }
