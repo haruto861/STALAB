@@ -22,6 +22,13 @@ final class Router {
         self.window = window
     }
 
+    func showHome() {
+        let tab = UITabBarController()
+        let vc = [UIStoryboard.homeViewController]
+        tab.setViewControllers(vc, animated: true)
+        UIApplication.shared.keyWindow?.rootViewController = tab
+    }
+
     func toSignup(from: UIViewController) {
         let vc = UIStoryboard.signupViewController
         transit(from: from, next: vc)
