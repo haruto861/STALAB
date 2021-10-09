@@ -24,9 +24,10 @@ final class Router {
 
     func showHome() {
         let tab = UITabBarController()
-        let vc = [UIStoryboard.homeViewController]
+        let vc = [UIStoryboard.homeViewController, UIStoryboard.profileViewController]
         tab.setViewControllers(vc, animated: true)
-        UIApplication.shared.keyWindow?.rootViewController = tab
+        window?.rootViewController = tab
+        window?.makeKeyAndVisible()
     }
 
     func toSignup(from: UIViewController) {
@@ -36,10 +37,14 @@ final class Router {
 
     func toHome(from: UIViewController) {
         let tab = UITabBarController()
-        let vc = [UIStoryboard.homeViewController]
+        let vc = [UIStoryboard.homeViewController, UIStoryboard.profileViewController]
         tab.setViewControllers(vc, animated: true)
         window?.rootViewController = tab
         window?.makeKeyAndVisible()
+    }
+
+    func restart() {
+        showRoot(window: window)
     }
 
     func transit(from: UIViewController, next: UIViewController, animated: Bool = true) {
