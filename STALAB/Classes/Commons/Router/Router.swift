@@ -30,12 +30,6 @@ final class Router {
         window?.makeKeyAndVisible()
     }
 
-    func showTop() {
-        let vc = UIStoryboard.topPageViewController
-        window?.rootViewController = vc
-        window?.makeKeyAndVisible()
-    }
-
     func toSignup(from: UIViewController) {
         let vc = UIStoryboard.signupViewController
         transit(from: from, next: vc)
