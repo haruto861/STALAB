@@ -16,23 +16,9 @@ final class TopPageViewController: UIViewController {
             signupButton.addTarget(self, action: #selector(didTapSingup), for: .touchUpInside)
         }
     }
-    @IBOutlet weak var signInButton: UIButton! {
-        didSet {
-            signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
-        }
-    }
-
 
     @objc private func didTapSingup() {
         Router.shared.toSignup(from: self)
     }
-    @objc private func didTapSignIn() {
-        do  {
-            try Auth.auth().signOut()
-        }
-        catch(let error) {
-            print("エラー",error)
-        }
-        print("ログアウトしました")
-    }
+
 }
