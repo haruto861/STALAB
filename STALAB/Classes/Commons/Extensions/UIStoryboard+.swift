@@ -20,4 +20,8 @@ extension UIStoryboard {
     static var homeViewController: HomeViewController {
         return UIStoryboard(name: "Home", bundle: nil).instantiateInitialViewController() as! HomeViewController
     }
+
+    static var profileViewController: ProfileViewController {
+        return UIStoryboard(name: "Profile", bundle: nil).instantiateInitialViewController() as! ProfileViewController
+    }
 }
