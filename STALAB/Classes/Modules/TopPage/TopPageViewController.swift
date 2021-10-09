@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 final class TopPageViewController: UIViewController {
 
@@ -18,4 +20,5 @@ final class TopPageViewController: UIViewController {
     @objc private func didTapSingup() {
         Router.shared.toSignup(from: self)
     }
+
 }
