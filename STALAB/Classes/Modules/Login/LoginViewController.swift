@@ -10,8 +10,18 @@ import Firebase
 
 final class LoginViewController: UIViewController {
 
-    @IBOutlet private weak var emailTextField: UITextField!
-    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField! {
+        didSet {
+            emailTextField.delegate = self
+        }
+    }
+
+    @IBOutlet private weak var passwordTextField: UITextField! {
+        didSet {
+            emailTextField.delegate = self
+        }
+    }
+
     @IBOutlet private weak var loginButton: UIButton! {
         didSet {
             loginButton.addTarget(self, action: #selector(loginPressed(_:)), for: .touchUpInside)
@@ -48,7 +58,16 @@ final class LoginViewController: UIViewController {
                 default:
                     break
                 }
+            } else {
+                Router.shared.toHome(from: self)
             }
         }
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

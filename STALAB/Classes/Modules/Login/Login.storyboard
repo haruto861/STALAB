@@ -42,7 +42,6 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Fbj-9w-1XX"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="aiO-pa-KIj"/>
                                 </constraints>
                             </stackView>
@@ -59,16 +58,15 @@
                             <constraint firstItem="mhD-vj-xtb" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="54U-tE-zTY"/>
                             <constraint firstItem="MKy-id-wpM" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Z8P-tt-262"/>
                             <constraint firstItem="MKy-id-wpM" firstAttribute="height" secondItem="mhD-vj-xtb" secondAttribute="height" multiplier="0.284404" id="bLv-Fh-UfM"/>
-                            <constraint firstItem="mhD-vj-xtb" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.724638" id="kd5-l3-4QK"/>
                             <constraint firstItem="MKy-id-wpM" firstAttribute="width" secondItem="mhD-vj-xtb" secondAttribute="width" id="m5g-cD-Ft0"/>
                             <constraint firstItem="mhD-vj-xtb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="149" id="nWR-tP-aFk"/>
                             <constraint firstItem="mhD-vj-xtb" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.121652" id="tvc-EL-CQx"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="kam-FB-5pC" id="bfd-9H-QOm"/>
+                        <outlet property="emailTextField" destination="kam-FB-5pC" id="X1h-bV-15e"/>
                         <outlet property="loginButton" destination="MKy-id-wpM" id="OfP-PN-OTd"/>
-                        <outlet property="passwordTextField" destination="x51-31-lZS" id="Hd8-sb-r0T"/>
+                        <outlet property="passwordTextField" destination="x51-31-lZS" id="R6L-2R-6tI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
