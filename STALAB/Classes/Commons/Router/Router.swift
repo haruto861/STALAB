@@ -43,6 +43,11 @@ final class Router {
         window?.makeKeyAndVisible()
     }
 
+    func toLogin(from: UIViewController) {
+        let vc = UIStoryboard.loginViewController
+        transit(from: from, next: vc)
+    }
+
     func restart() {
         showRoot(window: window)
     }

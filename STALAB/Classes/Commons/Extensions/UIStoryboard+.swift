@@ -24,4 +24,8 @@ extension UIStoryboard {
     static var profileViewController: ProfileViewController {
         return UIStoryboard(name: "Profile", bundle: nil).instantiateInitialViewController() as! ProfileViewController
     }
+
+    static var loginViewController: LoginViewController {
+        return UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as! LoginViewController
+    }
 }
