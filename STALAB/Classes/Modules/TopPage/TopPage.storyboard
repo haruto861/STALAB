@@ -44,6 +44,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="ZjF-Ud-M6V" id="sld-gf-PfK"/>
                         <outlet property="signupButton" destination="hOb-cH-X9I" id="hwk-fU-bQ8"/>
                     </connections>
                 </viewController>

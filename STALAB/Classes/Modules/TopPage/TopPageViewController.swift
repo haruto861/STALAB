@@ -17,7 +17,18 @@ final class TopPageViewController: UIViewController {
         }
     }
 
+    @IBOutlet private weak var loginButton: UIButton! {
+        didSet {
+            loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
+        }
+    }
+
+
     @objc private func didTapSingup() {
         Router.shared.toSignup(from: self)
+    }
+
+    @objc private func didTapLogin() {
+        Router.shared.toLogin(from: self)
     }
 }

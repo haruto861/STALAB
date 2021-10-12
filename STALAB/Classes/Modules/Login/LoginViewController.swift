@@ -14,7 +14,6 @@ final class LoginViewController: UIViewController {
     @IBOutlet private weak var passwordTextField: UITextField!
     @IBOutlet private weak var loginButton: UIButton! {
         didSet {
-            loginButton.isEnabled = false
             loginButton.addTarget(self, action: #selector(loginPressed(_:)), for: .touchUpInside)
         }
     }
@@ -29,7 +28,6 @@ final class LoginViewController: UIViewController {
         else {
             return
         }
-        loginButton.isEnabled = true
         login(email: email, password: password)
     }
 
