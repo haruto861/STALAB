@@ -7,7 +7,6 @@
 
 import UIKit
 import Firebase
-import GoogleSignIn
 
 final class TopPageViewController: UIViewController {
 
@@ -23,6 +22,11 @@ final class TopPageViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var anonymousLoginButton: UIButton! {
+        didSet {
+            anonymousLoginButton.addTarget(self, action: #selector(didTapAnoymousLogin), for: .touchUpInside)
+        }
+    }
 
     @objc private func didTapSingup() {
         Router.shared.toSignup(from: self)
@@ -30,5 +34,15 @@ final class TopPageViewController: UIViewController {
 
     @objc private func didTapLogin() {
         Router.shared.toLogin(from: self)
+    }
+
+    @objc private func didTapAnoymousLogin() {
+        Auth.auth().signInAnonymously { result, error in
+            if let error = error {
+                UIAlertController.init(title: "エラー", message: "\(error.localizedDescription)", preferredStyle: .alert).addOK(handler: nil).show(from: self)
+            } else {
+                Router.shared.toHome(from: self)
+            }
+        }
     }
 }

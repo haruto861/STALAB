@@ -40,10 +40,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {
-        if  Auth.auth().currentUser != nil {
+        if Auth.auth().currentUser != nil {
             Router.shared.showHome()
         } else {
             print("確認メールを確認してください")
+        }
+
+        if Auth.auth().currentUser?.isAnonymous != nil {
+            Router.shared.showHome()
+        } else {
+            print("エラー")
         }
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
