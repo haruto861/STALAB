@@ -48,6 +48,11 @@ final class Router {
         transit(from: from, next: vc)
     }
 
+    func toForgetPassword(from: UIViewController) {
+        let vc = UIStoryboard.forgetPasswordViewController
+        transit(from: from, next: vc)
+    }
+
     func restart() {
         showRoot(window: window)
     }
