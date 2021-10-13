@@ -28,4 +28,8 @@ extension UIStoryboard {
     static var loginViewController: LoginViewController {
         return UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() as! LoginViewController
     }
+
+    static var forgetPasswordViewController: ForgetPasswordViewController {
+        return UIStoryboard(name: "ForgetPassword", bundle: nil).instantiateInitialViewController() as! ForgetPasswordViewController
+    }
 }

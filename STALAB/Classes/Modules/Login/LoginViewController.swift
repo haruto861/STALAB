@@ -28,6 +28,13 @@ final class LoginViewController: UIViewController {
         }
     }
 
+    @IBOutlet private weak var forgetPassword: UIButton! {
+        didSet {
+            forgetPassword.addTarget(self, action: #selector(fogetPasswordPressed), for: .touchUpInside)
+        }
+    }
+
+
     @objc private func loginPressed(_ sender: UIButton) {
         enableLoginButton()
     }
@@ -62,6 +69,10 @@ final class LoginViewController: UIViewController {
                 Router.shared.toHome(from: self)
             }
         }
+    }
+
+    @objc private func fogetPasswordPressed() {
+        Router.shared.toForgetPassword(from: self)
     }
 }
 
