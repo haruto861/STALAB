@@ -24,7 +24,8 @@ final class Router {
 
     func showHome() {
         let tab = UITabBarController()
-        let vc = [UIStoryboard.homeViewController, UIStoryboard.profileViewController]
+        let homeVC = UIStoryboard.homeViewController
+        let vc = [UIStoryboard.homeViewController, UIStoryboard.profileViewController, UIStoryboard.menuViewController]
         tab.setViewControllers(vc, animated: true)
         window?.rootViewController = tab
         window?.makeKeyAndVisible()
