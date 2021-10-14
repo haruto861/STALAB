@@ -25,7 +25,12 @@ final class Router {
     func showHome() {
         let tab = UITabBarController()
         let homeVC = UIStoryboard.homeViewController
-        let vc = [UIStoryboard.homeViewController, UIStoryboard.profileViewController, UIStoryboard.menuViewController]
+        homeVC.tabBarItem = UITabBarItem(title: "home", image: UIImage(named: "home"), tag: 0)
+        let menuVC = UIStoryboard.menuViewController
+        menuVC.tabBarItem = UITabBarItem(title: "menu", image: UIImage(named: "drink"), tag: 1)
+        let profileVC = UIStoryboard.profileViewController
+        profileVC.tabBarItem = UITabBarItem(title: "profile", image: UIImage(named: "user"), tag: 2)
+        let vc = [homeVC, menuVC, profileVC]
         tab.setViewControllers(vc, animated: true)
         window?.rootViewController = tab
         window?.makeKeyAndVisible()
@@ -34,14 +39,6 @@ final class Router {
     func toSignup(from: UIViewController) {
         let vc = UIStoryboard.signupViewController
         transit(from: from, next: vc)
-    }
-
-    func toHome(from: UIViewController) {
-        let tab = UITabBarController()
-        let vc = [UIStoryboard.homeViewController, UIStoryboard.profileViewController]
-        tab.setViewControllers(vc, animated: true)
-        window?.rootViewController = tab
-        window?.makeKeyAndVisible()
     }
 
     func toLogin(from: UIViewController) {
