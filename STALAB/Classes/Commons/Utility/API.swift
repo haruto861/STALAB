@@ -34,6 +34,8 @@ class API {
 
     //menuを取得するAPI
     func getMenu(completion: @escaping (Menu) -> Void) {
-
+        AF.request("https://stalab.microcms.io/api/v1/stalabmenu281046861").responseJSON { res in
+            print(res)
+        }
     }
 }
