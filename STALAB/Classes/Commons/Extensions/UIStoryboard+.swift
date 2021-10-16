@@ -32,4 +32,8 @@ extension UIStoryboard {
     static var forgetPasswordViewController: ForgetPasswordViewController {
         return UIStoryboard(name: "ForgetPassword", bundle: nil).instantiateInitialViewController() as! ForgetPasswordViewController
     }
+
+    static var menuViewController: MenuViewController {
+        return UIStoryboard(name: "Menu", bundle: nil).instantiateInitialViewController() as! MenuViewController
+    }
 }

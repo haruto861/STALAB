@@ -15,6 +15,7 @@ final class ForgetPasswordViewController: UIViewController {
             sendEmailButton.addTarget(self, action: #selector(sendEmailButtonPressed), for: .touchUpInside)
         }
     }
+    
     @IBOutlet private weak var emailTextField: UITextField! {
         didSet {
             emailTextField.delegate = self

@@ -66,7 +66,7 @@ final class LoginViewController: UIViewController {
                     break
                 }
             } else {
-                Router.shared.toHome(from: self)
+                Router.shared.showHome()
             }
         }
     }

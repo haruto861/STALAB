@@ -61,7 +61,7 @@ final class SignupViewController: UIViewController {
                     UIAlertController(title: "エラー", message: "メールアドレスの形式が違います", preferredStyle: .alert).addOK(handler: nil).show(from: self)
                 case .emailAlreadyInUse:
                     UIAlertController(title: "エラー", message: "このメールアドレスは既に使用されています", preferredStyle: .alert).addCancel(handler: nil).addAction(title: "ログインへ") { _ in
-                        Router.shared.toHome(from: self)
+                        Router.shared.showHome()
                     }.show(from: self)
                 case .weakPassword:
                     UIAlertController(title: "エラー", message: "パスワードは6文字以上で入力してください", preferredStyle: .alert).addOK(handler: nil).show(from: self)

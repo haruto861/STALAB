@@ -41,7 +41,7 @@ final class TopPageViewController: UIViewController {
             if let error = error {
                 UIAlertController.init(title: "エラー", message: "\(error.localizedDescription)", preferredStyle: .alert).addOK(handler: nil).show(from: self)
             } else {
-                Router.shared.toHome(from: self)
+                Router.shared.showHome()
             }
         }
     }
