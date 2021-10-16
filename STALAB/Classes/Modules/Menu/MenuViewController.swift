@@ -11,8 +11,8 @@ final class MenuViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        API.shared.getMenu { menu in
-            print("メニュー",menu)
+        API.shared.getMenu { res in
+            print(res.contents)
         }
     }
 }
