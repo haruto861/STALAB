@@ -40,11 +40,13 @@ final class API {
     static var shared: API = .init()
     private init() {}
 
-    func getMenu(completion: @escaping (WrappedMenu) -> Void) {
+    func getMenu(completion: @escaping (WrappedMenu) -> Void?) {
         AF.request("https://stalab.microcms.io/api/v1/stalabmenu281046861", method: .get, headers: ["X-API-KEY" : "b5fc82a4-a500-48bf-8e43-adff446197cb" ]).response { res in
             do {
+                let jsonDecoder = JSONDecoder()
+                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                 guard let data = res.data else { return }
-                let menu = try JSONDecoder().decode(WrappedMenu.self, from: data)
+                let menu = try jsonDecoder.decode(WrappedMenu.self, from: data)
                 completion(menu)
             }
             catch(let error) {
@@ -52,4 +54,8 @@ final class API {
             }
         }
     }
+//     func sendRequest<requestType: Request>(_ requestType: requestType, completion: @escaping (Result<requestType.Body, Error>) -> Void?) {
+//        let jsonDeconder = JSONDecoder()
+//        jsonDeconder.keyDecodingStrategy = .convertFromSnakeCase
+//    }
 }

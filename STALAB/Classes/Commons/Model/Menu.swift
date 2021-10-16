@@ -15,10 +15,4 @@ struct Menu: Codable {
     let name: String
     let size: String
     let calorie: String
-
-    enum CodingKeys : String, CodingKey {
-        case name = "name"
-        case size = "size"
-        case calorie = "calorie"
-    }
 }
