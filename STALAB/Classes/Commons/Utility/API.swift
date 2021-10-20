@@ -24,14 +24,14 @@ extension Request {
         "https://stalab.microcms.io/api/v1/"
     }
     var headers: Alamofire.HTTPHeaders {
-        ["X-API-KEY" : "b5fc82a4-a500-48bf-8e43-adff446197cb"]
+        ["X-API-KEY" : ""]
     }
     var paramater: Alamofire.Parameters { [:] }
 }
 
 struct MenuRequest: Request {
     typealias Body = WrappedMenu
-    var path: String { "stalabmenu281046861" }
+    var path: String { "" }
     var HTTPmethod: HTTPMethod { .get }
 }
 
