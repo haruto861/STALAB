@@ -14,7 +14,7 @@ protocol Request {
     var baseURL: String { get }
     var path: String { get }
     var HTTPmethod: Alamofire.HTTPMethod { get }
-    var paramater: [String:Any] { get }
+    var paramater: Alamofire.Parameters{ get }
     var headers: Alamofire.HTTPHeaders { get }
 
 }
@@ -26,36 +26,32 @@ extension Request {
     var headers: Alamofire.HTTPHeaders {
         ["X-API-KEY" : "b5fc82a4-a500-48bf-8e43-adff446197cb"]
     }
-    var paramater: [String:Any] { [:] }
+    var paramater: Alamofire.Parameters { [:] }
 }
 
 struct MenuRequest: Request {
     typealias Body = WrappedMenu
-    var path: String { "stalab281046861" }
+    var path: String { "stalabmenu281046861" }
     var HTTPmethod: HTTPMethod { .get }
 }
 
 final class API {
-
     static var shared: API = .init()
     private init() {}
 
-    func getMenu(completion: @escaping (WrappedMenu) -> Void?) {
-        AF.request("https://stalab.microcms.io/api/v1/stalabmenu281046861", method: .get, headers: ["X-API-KEY" : "b5fc82a4-a500-48bf-8e43-adff446197cb" ]).response { res in
+    func sendRequest<T: Request>(request: T, completion: @escaping (T.Body) -> Void?) {
+        print(request.baseURL + request.path)
+        AF.request(request.baseURL + request.path, method: request.HTTPmethod, headers: request.headers ).response { res in
             do {
                 let jsonDecoder = JSONDecoder()
                 jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                 guard let data = res.data else { return }
-                let menu = try jsonDecoder.decode(WrappedMenu.self, from: data)
-                completion(menu)
+                let result = try jsonDecoder.decode(T.Body.self, from: data)
+                completion(result)
             }
             catch(let error) {
                 print("エラー",error.localizedDescription)
             }
         }
     }
-//     func sendRequest<requestType: Request>(_ requestType: requestType, completion: @escaping (Result<requestType.Body, Error>) -> Void?) {
-//        let jsonDeconder = JSONDecoder()
-//        jsonDeconder.keyDecodingStrategy = .convertFromSnakeCase
-//    }
 }
