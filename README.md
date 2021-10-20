@@ -1,2 +1,2 @@
 # STALAB
-Seekのリメイクver
+Seekのリメイクver（制作途中）
